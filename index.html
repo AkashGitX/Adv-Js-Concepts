@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Showcase</title>
+
+    <style>
+        .thumbnail {
+            width: 100px;
+            height: 70px;
+            cursor: pointer;
+            margin: 5px;
+            object-fit: cover;
+        }
+
+        .image-display {
+            margin-top: 20px;
+        }
+
+        .selected-image img {
+            width: 500px;
+            height: 350px;
+            object-fit: cover;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Image Showcase</h2>
+
+    <!-- Thumbnail Images -->
+    <div>
+        <img
+            src="image1.jpg"
+            class="thumbnail"
+            onclick="showImage(this)"
+            alt="Image 1"
+        >
+
+        <img
+            src="image2.jpg"
+            class="thumbnail"
+            onclick="showImage(this)"
+            alt="Image 2"
+        >
+
+        <img
+            src="image3.jpg"
+            class="thumbnail"
+            onclick="showImage(this)"
+            alt="Image 3"
+        >
+    </div>
+
+    <!-- Selected Image Display -->
+    <div class="image-display">
+        <div class="selected-image">
+            <img
+                id="largeImage"
+                src="image1.jpg"
+                alt="Selected Image"
+            >
+        </div>
+    </div>
+
+    <script>
+        function showImage(image) {
+            document.getElementById("largeImage").src = image.src;
+        }
+    </script>
+
+</body>
+</html>
